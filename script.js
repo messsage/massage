@@ -1,8 +1,11 @@
-const correctPassword = "666";
-const clearPassword = "123";
+const correctPassword = "zyanga666";
+const clearPassword = "zyanga123";
+
+// 动态显示密码
+document.getElementById('passwordDisplay').querySelector('strong').textContent = correctPassword;
 
 function checkPassword() {
-    const inputPassword = document.getElementById('password').value;
+    const inputPassword = document.getElementById('password').value.trim();
     if (inputPassword === correctPassword) {
         document.getElementById('login').style.display = 'none';
         document.getElementById('chat').style.display = 'block';
