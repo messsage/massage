@@ -1,11 +1,69 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 20px;
 }
 
 #login, #chat {
-    margin: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     max-width: 400px;
+    margin: 20px auto;
+}
+
+h1 {
     text-align: center;
+    font-size: 2em;  /* 增大字体 */
+    font-weight: bold; /* 加粗字体 */
+    color: #333;
+}
+
+p {
+    text-align: center;
+    margin: 10px 0;
+    color: #666;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* 椭圆形 */
+    background-color: #e0e0e0; /* 灰色 */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px; /* 椭圆形 */
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* 让按钮宽度和输入框一致 */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#messages {
+    margin: 10px 0;
+}
+
+.message {
+    background-color: #f0f0f0; /* 浅色外框 */
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.timestamp {
+    font-size: 0.8em; /* 小字 */
+    color: #999;
 }
