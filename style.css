@@ -11,6 +11,13 @@ body {
     border-radius: 10px; /* 圆角边框 */
     background-color: white; /* 背景颜色 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    display: flex;            /* 使用 Flexbox 布局 */
+    flex-direction: column;   /* 垂直排列 */
+    align-items: center;      /* 水平居中对齐 */
+    justify-content: center;   /* 垂直居中对齐 */
+    height: 100vh;           /* 占满整个视口高度 */
+    padding: 20px;           /* 内边距 */
+    box-sizing: border-box;   /* 包含内边距在内的总宽度 */
 }
 
 input[type="password"], input[type="text"] {
