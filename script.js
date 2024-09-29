@@ -1,5 +1,5 @@
-const correctPassword = "zyanga666";
-const clearPassword = "zyanga123";
+const correctPassword = "666";
+const clearPassword = "123";
 
 function checkPassword() {
     const inputPassword = document.getElementById('password').value;
