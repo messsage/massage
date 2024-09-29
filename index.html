@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>简洁问答网站</title>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="login" style="text-align: center; position: absolute; bottom: 20px; width: 100%;">
-        <p id="passwordDisplay">您的密码是: <strong></strong></p>
+    <div id="login">
         <input type="password" id="password" placeholder="输入密码">
-        <button onclick="checkPassword()">打开</button>
+        <button onclick="checkPassword()">进入</button>
     </div>
     <div id="chat" style="display:none;">
         <div id="messages"></div>
@@ -20,6 +20,5 @@
         <button onclick="sendMessage()">发送</button>
         <button onclick="clearMessages()">清除所有消息</button>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
