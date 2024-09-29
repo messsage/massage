@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>简洁问答网站</title>
+
+    <!-- 使用Firebase非模块化版本 (v8.10.0) -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- 在Firebase SDK加载完成后加载自定义JS -->
     <script src="script.js" defer></script>
 </head>
 <body>
     <div id="login">
+        <p>您的密码是：<span id="displayPassword"></span></p>
         <input type="password" id="password" placeholder="输入密码">
         <button onclick="checkPassword()">进入</button>
     </div>
