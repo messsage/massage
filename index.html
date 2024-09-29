@@ -78,41 +78,7 @@
         }
     </script>
 </head>
-<body>
-    body {
-            position: relative;
-            margin: 0;
-            padding-bottom: 30px;
-        }
 
-        #login, #chat {
-            display: flex;          /* 使用 Flexbox 布局 */
-            flex-direction: column; /* 垂直排列 */
-            align-items: center;    /* 水平居中对齐 */
-            justify-content: center; /* 垂直居中对齐 */
-            height: 100vh;         /* 占满整个视口高度 */
-            padding: 20px;         /* 内边距 */
-            box-sizing: border-box; /* 包含内边距在内的总宽度 */
-        }
-
-        input[type="password"], input[type="text"] {
-            border-radius: 20px; /* 圆角样式 */
-            padding: 10px;       /* 内边距 */
-            width: 80%;          /* 输入框宽度 */
-            margin-bottom: 10px; /* 底部间距 */
-        }
-
-        .developer {
-            font-size: 12px;
-            color: #555;
-            text-align: center;
-            position: fixed;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-        }
-    </style>
-</head>
 <body>
     <div id="login">
         <h1>小纸条</h1>
@@ -129,7 +95,7 @@
         <button onclick="clearMessages()">清除所有消息</button>
     </div>
 
-    <p class="developer">开发者: 您的名字</p>
+    <p class="developer">@stboat</p>
 </body>
     
     <script src="script.js"></script>
