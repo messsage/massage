@@ -11,6 +11,7 @@
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
         import { getDatabase, ref, push, remove, onChildAdded } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
+
         // Firebase 配置
   const firebaseConfig = {
     apiKey: "AIzaSyDad42WGAcv55jZXh-HaEAQmntqZqw6mPE",
@@ -22,7 +23,6 @@
     appId: "1:531581384231:web:61a3847d3c7dd28fe88002",
     measurementId: "G-2K9HBCHMJW"
   };
-
         // 初始化 Firebase
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
@@ -83,7 +83,7 @@
     <div id="login">
         <h1>小纸条</h1>
         <p>解决不同设备临时传递信息的需求</p>
-        <input type="password" id="password" placeholder="输入密码">
+        <input type="password" id="password" placeholder="输入密码" class="input-password">
         <button onclick="checkPassword()">确定</button>
     </div>
 
@@ -91,7 +91,7 @@
     <div id="chat" style="display:none;">
         <h1>小纸条</h1>
         <div id="messages"></div>
-        <input type="text" id="userInput" placeholder="发送消息">
+        <input type="text" id="userInput" placeholder="发送消息" class="input-message">
         <button onclick="sendMessage()">发送</button>
         <button onclick="clearMessages()">清除所有消息</button>
     </div>
@@ -99,3 +99,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
