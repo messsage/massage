@@ -9,16 +9,14 @@
     appId: "1:531581384231:web:61a3847d3c7dd28fe88002",
     measurementId: "G-2K9HBCHMJW"
   };
+
 // 初始化Firebase
-const app = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 // 设置密码
 const correctPassword = "zyanga666";
 const clearPassword = "zyanga123";
-
-// 动态显示密码
-document.getElementById('passwordDisplay').querySelector('strong').textContent = correctPassword;
 
 // 验证密码
 function checkPassword() {
@@ -26,7 +24,7 @@ function checkPassword() {
     if (inputPassword === correctPassword) {
         document.getElementById('login').style.display = 'none';
         document.getElementById('chat').style.display = 'block';
-        loadMessages(); // 加载之前的消息
+        loadMessages(); // 加载消息
     } else {
         alert("密码错误");
     }
@@ -54,7 +52,7 @@ function clearMessages() {
     }
 }
 
-// 加载并显示消息
+// 加载消息
 function loadMessages() {
     database.ref('messages').on('value', (snapshot) => {
         document.getElementById('messages').innerHTML = '';
