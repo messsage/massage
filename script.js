@@ -22,16 +22,21 @@ const clearPassword = "zyanga123";
 document.getElementById('displayPassword').textContent = correctPassword;
 
 // 验证密码
-function checkPassword() {
-    const inputPassword = document.getElementById('password').value.trim();
-    if (inputPassword === correctPassword) {
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('chat').style.display = 'block';
-        loadMessages(); // 加载消息
-    } else {
-        alert("密码错误");
+window.onload = function() {
+    function checkPassword() {
+        const inputPassword = document.getElementById('password').value.trim();
+        if (inputPassword === correctPassword) {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('chat').style.display = 'block';
+            loadMessages(); // 加载消息
+        } else {
+            alert("密码错误");
+        }
     }
-}
+
+    // 其他代码...
+};
+
 
 // 发送消息
 function sendMessage() {
