@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* 设置背景颜色 */
+    background-color: #f0f0f0; /* 背景颜色 */
     text-align: center; /* 内容居中 */
 }
 
@@ -14,7 +14,7 @@ body {
 }
 
 input[type="password"], input[type="text"] {
-    width: 100%; /* 全宽 */
+    width: calc(100% - 20px); /* 设置宽度并减去左右内间距 */
     padding: 10px; /* 内间距 */
     border-radius: 20px; /* 圆角边框 */
     border: 1px solid #ccc; /* 边框 */
