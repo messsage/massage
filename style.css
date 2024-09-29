@@ -46,3 +46,13 @@ button:hover {
     padding: 10px; /* 内间距 */
     background-color: #f9f9f9; /* 背景颜色 */
 }
+.developer {
+    margin-top: 20px; /* 顶部间距 */
+    font-size: 12px; /* 字体大小 */
+    color: #555; /* 字体颜色 */
+    text-align: center; /* 文本居中 */
+    position: absolute; /* 绝对定位 */
+    bottom: 20px; /* 距离底部20px */
+    left: 0;
+    right: 0; /* 确保水平居中 */
+}
