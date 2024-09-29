@@ -6,9 +6,77 @@
     <link rel="stylesheet" href="style.css">
     <title>简洁问答网站</title>
     <!-- Firebase App (核心库) -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <!-- Firebase Realtime Database -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script type="module">
+        // 这里加载 Firebase SDK
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
+        import { getDatabase, ref, push, remove, onChildAdded } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
+
+        // Firebase 配置
+  const firebaseConfig = {
+    apiKey: "AIzaSyDad42WGAcv55jZXh-HaEAQmntqZqw6mPE",
+    authDomain: "message-5a214.firebaseapp.com",
+    databaseURL: "https://message-5a214-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "message-5a214",
+    storageBucket: "message-5a214.appspot.com",
+    messagingSenderId: "531581384231",
+    appId: "1:531581384231:web:61a3847d3c7dd28fe88002",
+    measurementId: "G-2K9HBCHMJW"
+  };
+
+        // 初始化 Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        const correctPassword = "zyanga666";
+        const clearPassword = "zyanga123";
+
+        // 检查密码并显示聊天界面
+        window.checkPassword = function() {
+            const inputPassword = document.getElementById('password').value.trim();
+            if (inputPassword === correctPassword) {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('chat').style.display = 'block';
+                loadMessages(); // 加载消息
+            } else {
+                alert("密码错误");
+            }
+        }
+
+        // 发送消息
+        window.sendMessage = function() {
+            const message = document.getElementById('userInput').value.trim();
+            if (message) {
+                const messageObj = {
+                    text: message,
+                    timestamp: Date.now()
+                };
+                // 将消息存储到 Firebase
+                push(ref(database, 'messages'), messageObj);
+                document.getElementById('userInput').value = '';
+            }
+        }
+
+        // 清除消息
+        window.clearMessages = function() {
+            const inputPassword = prompt("输入清除密码");
+            if (inputPassword === clearPassword) {
+                remove(ref(database, 'messages')); // 从 Firebase 删除所有消息
+                document.getElementById('messages').innerHTML = '';
+            } else {
+                alert("密码错误");
+            }
+        }
+
+        // 加载消息
+        window.loadMessages = function() {
+            onChildAdded(ref(database, 'messages'), function(snapshot) {
+                const message = snapshot.val();
+                const messageDiv = document.createElement('div');
+                messageDiv.textContent = message.text;
+                document.getElementById('messages').appendChild(messageDiv);
+            });
+        }
+    </script>
 </head>
 <body>
     <div id="login">
@@ -22,6 +90,5 @@
         <button onclick="sendMessage()">发送</button>
         <button onclick="clearMessages()">清除所有消息</button>
     </div>
-    <script src="script.js" defer></script>
 </body>
 </html>
