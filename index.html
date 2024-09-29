@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>简洁问答网站</title>
+</head>
+<body>
+    <div id="login">
+        <input type="password" id="password" placeholder="输入密码">
+        <button onclick="checkPassword()">进入</button>
+    </div>
+    <div id="chat" style="display:none;">
+        <div id="messages"></div>
+        <input type="text" id="userInput" placeholder="发送消息">
+        <button onclick="sendMessage()">发送</button>
+        <button onclick="clearMessages()">清除所有消息</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
