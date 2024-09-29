@@ -10,41 +10,46 @@
     measurementId: "G-2K9HBCHMJW"
   };
 
-// 初始化Firebase
+// Firebase 配置
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+// 初始化 Firebase
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
-// 设置密码
 const correctPassword = "zyanga666";
 const clearPassword = "zyanga123";
 
-// 在页面加载时显示当前密码
-document.getElementById('displayPassword').textContent = correctPassword;
-
-// 验证密码
-window.onload = function() {
-    function checkPassword() {
-        const inputPassword = document.getElementById('password').value.trim();
-        if (inputPassword === correctPassword) {
-            document.getElementById('login').style.display = 'none';
-            document.getElementById('chat').style.display = 'block';
-            loadMessages(); // 加载消息
-        } else {
-            alert("密码错误");
-        }
+// 检查密码并显示聊天界面
+function checkPassword() {
+    const inputPassword = document.getElementById('password').value.trim();
+    if (inputPassword === correctPassword) {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('chat').style.display = 'block';
+        loadMessages(); // 加载消息
+    } else {
+        alert("密码错误");
     }
-
-    // 其他代码...
-};
-
+}
 
 // 发送消息
 function sendMessage() {
-    const message = document.getElementById('userInput').value;
+    const message = document.getElementById('userInput').value.trim();
     if (message) {
-        database.ref('messages').push().set({
-            text: message
-        });
+        const messageObj = {
+            text: message,
+            timestamp: Date.now()
+        };
+        // 将消息存储到 Firebase
+        database.ref('messages').push(messageObj);
         document.getElementById('userInput').value = '';
     }
 }
@@ -53,7 +58,7 @@ function sendMessage() {
 function clearMessages() {
     const inputPassword = prompt("输入清除密码");
     if (inputPassword === clearPassword) {
-        database.ref('messages').remove();
+        database.ref('messages').remove(); // 从 Firebase 删除所有消息
         document.getElementById('messages').innerHTML = '';
     } else {
         alert("密码错误");
@@ -62,18 +67,11 @@ function clearMessages() {
 
 // 加载消息
 function loadMessages() {
-    database.ref('messages').on('value', (snapshot) => {
-        document.getElementById('messages').innerHTML = '';
-        snapshot.forEach((childSnapshot) => {
-            const message = childSnapshot.val().text;
-            displayMessage(message);
-        });
+    // 从 Firebase 加载消息
+    database.ref('messages').on('child_added', function(snapshot) {
+        const message = snapshot.val();
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = message.text;
+        document.getElementById('messages').appendChild(messageDiv);
     });
-}
-
-// 显示消息
-function displayMessage(message) {
-    const messageDiv = document.createElement('div');
-    messageDiv.textContent = message;
-    document.getElementById('messages').appendChild(messageDiv);
 }
