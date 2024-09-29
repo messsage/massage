@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>简洁问答网站</title>
-
-    <!-- 使用Firebase非模块化版本 (v8.10.0) -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
+    <!-- Firebase App (核心库) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <!-- Firebase Realtime Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
 </head>
 <body>
     <div id="login">
-        <p>您的密码是：<span id="displayPassword"></span></p>
+        <div>您的密码是：<span id="displayPassword">zyanga666</span></div>
         <input type="password" id="password" placeholder="输入密码">
         <button onclick="checkPassword()">进入</button>
     </div>
@@ -23,6 +22,6 @@
         <button onclick="sendMessage()">发送</button>
         <button onclick="clearMessages()">清除所有消息</button>
     </div>
-        <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
