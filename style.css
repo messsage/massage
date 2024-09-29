@@ -6,7 +6,6 @@ body {
 
 #login, #chat {
     max-width: 400px; /* 最大宽度 */
-    margin: 0 auto; /* 居中对齐 */
     padding: 20px;
     border-radius: 10px; /* 圆角边框 */
     background-color: white; /* 背景颜色 */
