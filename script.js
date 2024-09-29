@@ -9,16 +9,6 @@
     appId: "1:531581384231:web:61a3847d3c7dd28fe88002",
     measurementId: "G-2K9HBCHMJW"
   };
-// Firebase 配置
-const firebaseConfig = {
-    apiKey: "你的API密钥",
-    authDomain: "你的项目ID.firebaseapp.com",
-    databaseURL: "https://你的项目ID.firebaseio.com",
-    projectId: "你的项目ID",
-    storageBucket: "你的项目ID.appspot.com",
-    messagingSenderId: "你的发送者ID",
-    appId: "你的应用ID"
-};
 
 // 初始化Firebase
 firebase.initializeApp(firebaseConfig);
