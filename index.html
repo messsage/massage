@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>简洁问答网站</title>
+    <title>小纸条</title>
     <!-- Firebase App (核心库) -->
     <script type="module">
         // 这里加载 Firebase SDK
@@ -79,16 +79,23 @@
     </script>
 </head>
 <body>
+    <!-- 首页 -->
     <div id="login">
-        <div>您的密码是：<span id="displayPassword">zyanga666</span></div>
+        <h1>小纸条</h1>
+        <p>解决不同设备临时传递信息的需求</p>
         <input type="password" id="password" placeholder="输入密码">
-        <button onclick="checkPassword()">进入</button>
+        <button onclick="checkPassword()">确定</button>
     </div>
+
+    <!-- 主界面 -->
     <div id="chat" style="display:none;">
+        <h1>小纸条</h1>
         <div id="messages"></div>
         <input type="text" id="userInput" placeholder="发送消息">
         <button onclick="sendMessage()">发送</button>
         <button onclick="clearMessages()">清除所有消息</button>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
