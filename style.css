@@ -1,96 +1,73 @@
+/* 保留之前的 body 样式 */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    text-align: center; /* 内容居中 */
 }
 
+/* 保留登录和主界面的基础样式 */
 #login, #chat {
-    width: 300px; /* 固定宽度 */
-    height: auto; /* 自动高度，内容多少决定高度 */
+    max-width: 400px; /* 最大宽度 */
     padding: 20px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* 圆角边框 */
+    background-color: white; /* 背景颜色 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center; /* 所有控件居中 */
-}
-
-h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    align-items: center; /* 水平居中对齐 */
+    justify-content: center; /* 垂直居中对齐 */
+    margin: 0 auto;
+    height: 100vh; /* 占满整个视口高度 */
+    box-sizing: border-box; /* 包含内边距在内的总宽度 */
 }
 
 input[type="password"], input[type="text"] {
-    width: calc(100% - 20px); /* 统一宽度 */
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center; /* 输入内容居中 */
+    width: calc(100% - 20px); /* 设置宽度并减去左右内间距 */
+    padding: 10px; /* 内间距 */
+    border-radius: 20px; /* 圆角边框 */
+    border: 1px solid #ccc; /* 边框 */
+    box-sizing: border-box; /* 包含内边距和边框在内的宽度计算 */
+    margin-top: 10px; /* 顶部间距 */
+    margin-bottom: 10px; /* 底部间距 */
 }
 
 #messages {
-    width: 100%;
-    margin-top: 10px;
-    max-height: 150px; /* 限制高度 */
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 信息内容居中 */
-    text-align: center; /* 文本居中 */
+    margin-top: 20px; /* 顶部间距 */
+    max-height: 300px; /* 最大高度 */
+    overflow-y: auto; /* 垂直滚动条 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 10px; /* 圆角边框 */
+    padding: 10px; /* 内间距 */
+    background-color: #f9f9f9; /* 背景颜色 */
 }
 
-.message {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 5px 10px;
-    margin-bottom: 5px;
-    background-color: #eaeaea;
-    text-align: center;
-    width: 100%; /* 信息内容占满可用宽度 */
-    box-sizing: border-box;
+/* 保持按钮样式，但放在同一行居中 */
+#buttonContainer {
+    display: flex;
+    justify-content: center; /* 按钮容器居中 */
+    gap: 10px; /* 按钮之间的间距 */
+    margin-top: 20px;
 }
 
 button {
-    width: 100px;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-#buttonContainer {
-    display: flex;
-    justify-content: space-between; /* 按钮水平排列 */
-    width: 100%;
+    padding: 10px 20px; /* 内边距 */
+    border: none; /* 无边框 */
+    border-radius: 20px; /* 圆角边框 */
+    background-color: #4CAF50; /* 背景颜色 */
+    color: white; /* 字体颜色 */
+    cursor: pointer; /* 鼠标指针样式 */
 }
 
 #sendButton {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4CAF50; /* 发送按钮颜色 */
 }
 
 #clearButton {
-    background-color: #f44336;
-    color: white;
+    background-color: #f44336; /* 清除按钮颜色 */
 }
 
 button:hover {
-    opacity: 0.9;
+    opacity: 0.9; /* 鼠标悬停时的透明度 */
 }
 
 .developer {
@@ -99,5 +76,5 @@ button:hover {
     position: absolute;
     bottom: 10px;
     width: 100%;
-    text-align: center;
+    text-align: center; /* 文本居中 */
 }
