@@ -10,7 +10,7 @@ body {
 
 #login, #chat {
     width: 300px; /* 固定宽度 */
-    height: 300px; /* 固定高度，确保正方形 */
+    height: auto; /* 自动高度，内容多少决定高度 */
     padding: 20px;
     border-radius: 10px;
     background-color: white;
@@ -18,43 +18,79 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* 控件垂直分布 */
+    justify-content: center; /* 所有控件居中 */
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 input[type="password"], input[type="text"] {
-    width: calc(100% - 20px);
+    width: calc(100% - 20px); /* 统一宽度 */
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-button {
-    width: calc(100% - 20px); /* 设置按钮与输入框一致的宽度 */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #45a049;
+    text-align: center; /* 输入内容居中 */
 }
 
 #messages {
+    width: 100%;
     margin-top: 10px;
-    max-height: 150px; /* 限制高度，使其适合正方形 */
+    max-height: 150px; /* 限制高度 */
     overflow-y: auto;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     background-color: #f9f9f9;
-    width: calc(100% - 20px); /* 与输入框和按钮对齐 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 信息内容居中 */
+    text-align: center; /* 文本居中 */
+}
+
+.message {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    background-color: #eaeaea;
+    text-align: center;
+    width: 100%; /* 信息内容占满可用宽度 */
+    box-sizing: border-box;
+}
+
+button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: space-between; /* 按钮水平排列 */
+    width: 100%;
+}
+
+#sendButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#clearButton {
+    background-color: #f44336;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
 }
 
 .developer {
