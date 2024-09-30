@@ -1,37 +1,32 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* 背景颜色 */
+    background-color: #f0f0f0;
+    text-align: center;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* 确保内容占据整个视口 */
-    text-align: center; /* 内容居中 */
 }
 
 #login, #chat {
-    max-width: 400px; /* 最大宽度 */
-    width: 100%; /* 宽度100%，保证在小屏幕上适应 */
+    width: 100%; /* 默认全屏 */
+    max-width: 400px;
     padding: 20px;
-    border-radius: 10px; /* 圆角边框 */
-    background-color: white; /* 背景颜色 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; /* 垂直排列 */
-    align-items: center; /* 水平居中对齐 */
-    justify-content: center; /* 垂直居中对齐 */
-    height: 100%; /* 占满整个视口高度 */
-    box-sizing: border-box; /* 内边距包含在宽度和高度计算中 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 input[type="password"], input[type="text"] {
-    width: calc(100% - 40px); /* 设置宽度并减去左右内边距 */
+    width: calc(100% - 20px);
     padding: 10px;
-    border-radius: 20px; /* 圆角边框 */
-    border: 1px solid #ccc; /* 边框 */
-    box-sizing: border-box; /* 包含内边距和边框在内的宽度计算 */
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -44,11 +39,10 @@ button {
     color: white;
     cursor: pointer;
     margin-top: 10px;
-    width: calc(100% - 40px); /* 保持与输入框宽度一致 */
 }
 
 button:hover {
-    background-color: #45a049; /* 鼠标悬停时的背景颜色 */
+    background-color: #45a049;
 }
 
 #messages {
@@ -59,15 +53,30 @@ button:hover {
     border-radius: 10px;
     padding: 10px;
     background-color: #f9f9f9;
-    width: calc(100% - 40px); /* 保持与输入框宽度一致 */
 }
 
 .developer {
+    margin-top: 20px;
     font-size: 12px;
     color: #555;
     text-align: center;
-    position: fixed; /* 使用固定定位 */
+    position: absolute;
     bottom: 20px;
     left: 0;
-    right: 0; /* 水平居中 */
+    right: 0;
+}
+
+/* 手机端样式 */
+@media only screen and (max-width: 768px) {
+    #login, #chat {
+        width: 100%; /* 手机端全屏 */
+    }
+}
+
+/* 桌面端样式 */
+@media only screen and (min-width: 769px) {
+    #login, #chat {
+        width: 400px; /* 桌面端固定宽度，正方形效果 */
+        height: 400px;
+    }
 }
