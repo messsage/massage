@@ -87,13 +87,20 @@
         <button onclick="checkPassword()">确定</button>
     </div>
 
-    <div id="chat" style="display:none;">
-        <h1>小纸条</h1>
-        <div id="messages"></div>
-        <input type="text" id="userInput" placeholder="发送消息">
-        <button onclick="sendMessage()">发送</button>
-        <button onclick="clearMessages()">清除所有消息</button>
+<!-- 主界面 -->
+<div id="chat" style="display:none;">
+    <h1>小纸条</h1>
+    <div id="messages"></div> <!-- 消息区域 -->
+
+    <input type="text" id="userInput" placeholder="发送消息">
+
+    <!-- 按钮容器，两个按钮在同一行 -->
+    <div id="buttonContainer">
+        <button id="sendButton" onclick="sendMessage()">发送</button>
+        <button id="clearButton" onclick="clearMessages()">清除所有消息</button>
     </div>
+</div>
+
 
     <p class="developer">@stboat</p>
 </body>
